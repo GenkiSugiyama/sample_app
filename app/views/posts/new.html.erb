@@ -1,0 +1,18 @@
+<h1>新規投稿</h1>
+<!-- form_for以下で使用されるブロック変数「f」に -->
+<!-- controllerから受け取ったインスタンス変数@postを渡す -->
+<%= form_for(@post) do |f| %> 
+	<h4>タイトル</h4>
+	<!-- text_field内の内容（f=@post）は「title」属性として扱う -->
+	<%= f.text_field :title %>
+
+	<h4>本文</h4>
+	<!-- text_area内の内容（f=@post）は「body」属性として扱う -->
+	<%= f.text_area :body %>
+
+	<!-- 画像投稿フォームを追加 -->
+	<h4>画像</h4>
+	<%= f.attachment_field :image %>
+
+	<%= f.submit '投稿' %>
+<% end %>
